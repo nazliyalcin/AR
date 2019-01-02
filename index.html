@@ -12,18 +12,18 @@
     </style>
   </head>
   <body>
+
+	  <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
     <a-assets>
-      <div id="line1" width="578" height="200"></div>
+        <!-- id=“file name“ src=“file url" -->
+       <div id="line1" width="578" height="200"></div>
     </a-assets>
-    <a-scene embedded artoolkit='sourceType: webcam;'>
-      <!-- <a-text value="Ericsson AR Demo"></a-text>
-      <a-box position='0 0 0.5' material='opacity: 0.6;'></a-box>
-      <a-triangle rotation="-90 0 0"></a-triangle> -->
-      <!-- <a-marker-camera type="pattern" patternUrl="ericsson.patt"></a-marker-camera> -->
-      <a-box src="#line1"></a-box>
-      <!--<a-marker-camera preset='hiro'></a-marker-camera>-->
-	  <a-marker preset="hiro"></a-marker>
-	  <a-entity camera></a-entity>
+
+        <a-marker preset='hiro' >
+         <a-box src="#line1"></a-box>
+        
+        </a-marker>
+        <a-entity camera></a-entity>
     </a-scene>
 
     <script>
