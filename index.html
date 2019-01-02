@@ -25,16 +25,6 @@
     </a-scene>
 
     <script>
-	verifyMarker() {
-    //var amarker = this.$refs.amarker; // vuejs
-    var amarker = document.querySelector("#amarker")
-    if(amarker.object2D.visible == true) {
-        console.log('marker is visible');
-    }
-    else {
-        console.log('marker is lost');
-    }
-}
       var canvas = document.getElementById('line1');
       var context = canvas.getContext('2d');
 
@@ -42,7 +32,15 @@
       context.moveTo(100, 150);
       context.lineTo(450, 50);
       context.stroke();
-	  verifyMarker();
+	  
+    var amarker = document.querySelector("#amarker")
+    if(amarker.object2D.visible == true) {
+        console.log('marker is visible');
+    }
+    else {
+        console.log('marker is lost');
+    }
+	  
     </script>
   </body>
 </html>
