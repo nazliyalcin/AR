@@ -21,10 +21,20 @@
       <a-triangle rotation="-90 0 0"></a-triangle> -->
       <!-- <a-marker-camera type="pattern" patternUrl="ericsson.patt"></a-marker-camera> -->
       <a-box src="#line1"></a-box>
-      <a-marker-camera preset='hiro'></a-marker-camera>
+      <a-marker-camera preset='hiro' id="amarker"></a-marker-camera>
     </a-scene>
 
     <script>
+	verifyMarker() {
+    //var amarker = this.$refs.amarker; // vuejs
+    var amarker = document.querySelector("#amarker")
+    if(amarker.object2D.visible == true) {
+        console.log('marker is visible');
+    }
+    else {
+        console.log('marker is lost');
+    }
+}
       var canvas = document.getElementById('line1');
       var context = canvas.getContext('2d');
 
@@ -32,6 +42,7 @@
       context.moveTo(100, 150);
       context.lineTo(450, 50);
       context.stroke();
+	  verifyMarker();
     </script>
   </body>
 </html>
