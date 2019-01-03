@@ -21,7 +21,8 @@
 
         <a-marker preset='hiro' >
          <a-box src="#line1"></a-box>
-        
+         <a-text value="#text1"></a-text>
+		
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
@@ -34,6 +35,15 @@
       context.moveTo(100, 150);
       context.lineTo(450, 50);
       context.stroke();
+	  
+	  var text = document.getElementById('text1');
+	  text.innerHTML = "Naber";
+	  
+	  setTimeout(function(){ 
+	  
+	  text.innerHTML = "2 seconds"
+
+	  }, 2000);
 	  
     </script>
   </body>
