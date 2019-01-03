@@ -18,11 +18,15 @@
 	  AFRAME.registerComponent('my-test-component', {
       tick: function () {
         var el = this.el;
-		for(var i = 0; i<5 ; i++){
-		el.setAttribute("text", {value: i});
-		}
+	
+		el.setAttribute("text", {value: this.getText});
+		
         
-      }
+      },
+	  getText: function() {
+            var d = new Date();
+            return d.toLocaleTimeString();
+    }  
     });
 	 </script>
 	  <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
