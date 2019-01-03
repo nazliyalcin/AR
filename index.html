@@ -21,7 +21,7 @@
 
         <a-marker preset='hiro' >
          <a-box src="#line1"></a-box>
-         <a-text value="#text1" z-offset="-1" color="red"></a-text>
+         <a-text value="" z-offset="-1" color="red"></a-text>
 		
         </a-marker>
         <a-entity camera></a-entity>
@@ -37,11 +37,11 @@
       context.stroke();
 	  
 	  var text = document.getElementById('text1');
-	  text.innerHTML = "Naber";
+	  
 	  
 	  setTimeout(function(){ 
 	  
-	  text.innerHTML = "2 seconds"
+	  text.value = "2 seconds"
 
 	  }, 2000);
 	  
