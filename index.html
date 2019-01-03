@@ -12,7 +12,16 @@
     </style>
   </head>
   <body>
-
+     
+	 <script>
+	 	
+	  AFRAME.registerComponent('my-test-component', {
+      tick: function () {
+        var el = this.el;
+        el.setAttribute("text", {value: 'other text'});
+      }
+    });
+	 </script>
 	  <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
     <a-assets>
         <!-- id=“file name“ src=“file url" -->
@@ -31,6 +40,9 @@
     </a-scene>
 
     <script>
+	
+
+	
       var canvas = document.getElementById('line1');
       var context = canvas.getContext('2d');
 
@@ -39,12 +51,7 @@
       context.lineTo(450, 50);
       context.stroke();
 	  
-       AFRAME.registerComponent('my-test-component', {
-      tick: function () {
-        var el = this.el;
-        el.setAttribute("text", {value: 'other text'});
-      }
-    });
+       
 	  
     </script>
   </body>
