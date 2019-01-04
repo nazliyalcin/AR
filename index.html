@@ -1,71 +1,48 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="./aframe.min.js"></script>
-    <script src="./aframe-ar.js"> </script>
-    <style>
-        body {
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-        }
-    </style>
+     
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/components/sphere-collider.js"></script>
   </head>
   <body>
-     
-	 <script>
-	 	
-	  AFRAME.registerComponent('my-test-component', {
-      tick: function () {
-        var el = this.el;
-	
-		el.setAttribute("text", {value: this.getText()});
-		
-        
-      },
-	  getText: function() {
-            var d = new Date();
-            return d.toLocaleTimeString();
-    }  
-    });
-	 </script>
-	  <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
-    <a-assets>
-        <!-- id=“file name“ src=“file url" -->
-      <!-- <div id="line1" width="578" height="200"></div>-->
-    </a-assets>
+    <script type="text/javascript" src="Aframe.js">
+    </script>
+    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled:true " >
+          <a-assets>
+              <img id="oklar" src="oklar.png" /> 
+          
+          </a-assets>
+          
+          <a-marker preset="hiro" box> 
+            <a-image src="#oklar" rotation="-90 0 0 " scale="3 3 0"> </a-image>
+          
+            <a-box dynamic-body depth="0.01" height="2" width="3" rotation="-90 0 0 "
+                position="3 -0.3 -0.9" detect-collision ></a-box>
+            <a-text rotation="-90 0 0 " value="Mary" color="black" position="1.93 0 0.07" width="1.5"></a-text>
+            <a-box id="box1" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+            color="tomato"> </a-box>
+            <a-text rotation="-90 0 0 " value="David" color="black" position="2.1 0 0.07" width="1.5"></a-text>
+            <a-box id="box2" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+            color="green"></a-box>
+            <a-text rotation="-90 0 0 " value="Alice" color="black" position="2.3 0 0.07" width="1.5"></a-text>
+            <a-box id="box3" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+            color="blue"></a-box>
+            <a-text rotation="-90 0 0 " value="John" color="black" position="2.5 0 0.07" width="1.5"></a-text>
+            <a-box id="box4" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+            color="gray" ></a-box>
+            
+            
+          </a-marker> 
+            <a-entity camera></a-entity> 
+              
+	 </a-scene>
 
-        <a-marker preset='hiro' >
-         <!-- <a-box src="#line1"></a-box> -->
-         <a-entity text="value: some text; wrapCount: 20; width: 3 ; color:red" position="0 2 0" my-test-component></a-entity>
-		 <a-entity 
-		 line="start: 0, 1, 0; end: 2 1 0; color: blue"
-		 line__2="start: 0, 2 ,1; end: 0 0 1; color: green"
-          ></a-entity>
-        </a-marker>
-        <a-entity camera>
-		
-		</a-entity>
-		
-    </a-scene>
-
-<!--     <script>
-	
-
-	
-		  var canvas = document.getElementById('line1');
-		  var context = canvas.getContext('2d');
-		  var context2 = canvas.getContext('2d');
-		  context.beginPath();
-		  context.moveTo(100, 100);
-		  context.lineTo(150, 100);
-		  context.stroke();
-		  context2.beginPath();
-		  context2.moveTo(100, 100);
-		  context2.lineTo(100, 150);
-		  context2.stroke();
-       
-	  
-    </script> -->
-  </body>
+    
+  <body>
 </html>
